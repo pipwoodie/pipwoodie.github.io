@@ -1,0 +1,33 @@
+Version 6.0
+
+MAJOR NEW FEATURES
+
+1)  Option to use OpenBUGS or WinBUGS as the computing engine.
+2)  Unstructured covariance model added to longitudinal option.
+3)  Ability to edit the default generated initial values or use a previously saved state.
+4)  Posterior plotting tool now also produces plots based on predictions or contrasts.
+5)  More options when defining predictions & contrasts: v() notation for range of values, * can be used in all models,
+    ~ handled better in contrast line, and better labels and information with output.
+
+
+MINOR NEW FEATURES
+
+1)  Auto Data button infers data range from currently active cell.
+2)  Model Checks button now highlights when model checking options selected.
+3)  Summary stats mean and SD annotated with comments to aid initial interpretation & assess adequacy of MCMC run length.
+4)  Altered how zero constrained effects coded.  Set to zero exactly, fixing OpenBUGS issue with previous method.
+5)  Reduced range of initial values when multiple chains used for links other than the identity.
+6)  Better default priors for models with non-identity link, particularly when probabilities are being modelled.
+7)  New default MCMC settings based on rules of thumb around sufficient accuracy of 95% credible limits.
+8)  Various improvements to the help text.
+
+
+BUG FIXES
+
+1)  Error in determining time factor level for AR1e models with replicates at same unit/time.
+2)  Error in BGX R Functions.R; used to return BRUGS simulated values with interpretable names.
+3)  Error when saving MVt prior distribution parameters for exchangeable "random" coefficients
+4)  Error when checking validity of contrast statement
+5)  Main form locked whilst BUGS running to prevent further events being triggered.
+6)  Error when NL model covariate given default setting when predictions set.
+7)  Better handling of case when more than 250 variables being imported (truncates).

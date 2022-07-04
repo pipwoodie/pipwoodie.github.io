@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Phil Woodward">
+    <link rel="shortcut icon" href="ico/favicon.ico">
+
+    <title>BugsXLA: Bayesian Analysis</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand">BugsXLA</span>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li class="active"><a href="instr.html">Installation Instructions</a></li>
+            <li><a href="walkthrough.html">Walkthrough</a></li>
+            <li><a href="ref.html">References</a></li>
+            <li><a href="issues.html">Troubleshooting</a></li>
+            <li><a href="http://www.openbugs.net/w/FrontPage">Open/WinBUGS</a></li>
+	    <li><a href="http://mcmc-jags.sourceforge.net">JAGS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="page-header">
+        <h1>Instructions for installing BugsXLA</h1>
+      </div>
+      <p>
+        If you have a previous version of BugsXLA loaded it must be uninstalled from Excel's add-in list.
+        The new version should automatically uninstall all previous versions, but it is recommended that
+        you attempt to do this manually first by opening the 'Options for BugsXLA' form and clicking on the
+        'Unload BugsXLA' button and confirming 'OK'. Optionally, you may also delete the BugsXLA directory
+        and all the files associated with this previous version.
+      </p>
+      <h2>Installation of New Version</h2>
+      <ol class="no-indent-list">
+        <li>
+          Download the files from the Download page. It is recommended that you extract these to C:\BugsXLA7
+        </li>
+        <li>
+          Open MS Excel.
+        </li>
+        <li>
+          Make Excel recognise the BugsXLA add-in:
+          <ul>
+            <li>
+              Excel 2000-2003
+              <ol>
+                <li>Select Tools: Add-Ins.</li>
+              </ol>
+            </li>
+            <li>
+              Excel 2007
+              <ol>
+                <li>Select MS Office Button : Excel Options : Add-Ins (listed in left hand column)</li>
+                <li>At the bottom of the form ensure Manage: Excel Add-Ins is selected, and click "Go ..."</li>
+              </ol>
+            </li>
+            <li>
+              Excel 2010-2016 (Office 365)
+              <ol>
+                <li>Select File : Options : Add-Ins (listed in left hand column)</li>
+                <li>At the bottom of the form ensure Manage: Excel Add-Ins is selected, and click "Go ..."</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Browse in the directory to which the zipped files have been extracted (see step 1).
+        </li>
+        <li>
+          Select the file BugsXLA7.xla and make sure that BugsXLA7 has been checked in the Add-Ins
+          dialog box before clicking 'OK'.
+        </li>
+        <li>
+          If you are warned that OpenBUGS, WinBUGS, JAGS or Notepad is not in 'specified location', click 'Yes'
+          and alter the directory entries so that these programs can be found.
+        </li>
+        <li>
+          A toolbar titled 'BugsXLA7' should appear that can be moved to your favoured location
+          on the Excel frame. In Excel 2007-2016 the toolbar will appear on the Add-In tab. It might be necessary to exit and restart Excel in order to see the Add-In tab.
+        </li>
+        <li>
+          If at anytime you have any problems running the program try a clean reinstall by
+          first removing all the old components:
+          <ol>
+            <li>
+              Open Excel and remove the BugsXLA toolbar:
+              <ul>
+                <li>
+                  Excel 2000-2003
+                  <ol>
+                    <li>Tools : Customize</li>
+                    <li>Select 'BugsXLA' from the list of Toolbars</li>
+                    <li>Delete (confirm OK)</li>
+                  </ol>
+                </li>
+                <li>
+                  Excel 2007-2016
+                  <ol>
+                    <li>Right mouse click on any BugsXLA icon and select 'delete custom toolbar'.</li>
+                  </ol>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Remove the BugsXLA add-in:
+              <ul>
+                <li>
+                Excel 2000-2003
+                <ol>
+                  <li>Tools : Add-Ins</li>
+                  <li>Uncheck 'BugsXLA' from the list of Add-Ins</li>
+                  <li>OK</li>
+                </ol>
+                </li>
+                <li>
+                  Excel 2007
+                  <ol>
+                    <li>Select MS Office Button : Excel Options : Add-Ins (listed in left hand column)</li>
+                    <li>At the bottom of the form ensure Manage: Excel Add-Ins is selected, and click "Go ..."</li>
+                    <li>Uncheck 'BugsXLA' from the list of Add-Ins</li>
+                    <li>OK</li>
+                  </ol>
+                </li>
+                <li>
+                  Excel 2010-2016
+                  <ol>
+                      <li>Select File : Options : Add-Ins (listed in left hand column)</li>
+                      <li>At the bottom of the form ensure Manage: Excel Add-Ins is selected, and click "Go ..."</li>
+                      <li>Uncheck 'BugsXLA' from the list of Add-Ins</li>
+                      <li>OK</li>
+                  </ol>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Exit Excel
+            </li>
+            <li>
+              Delete all the downloaded BugsXLA files from your hard drive.  Sometimes Windows
+              has the annoying habit of making copies of files such as Excel add-ins, and so in
+              extreme cases it might be necessary to undertake a complete search of your hard
+              drive in order to locate and delete these copies.
+            </li>
+          </ol>
+        </li>
+      </ol>
+
+      <h2>Examples</h2>
+      <p>
+        You can find four Excel Workbooks with a few example data-sets in the 'unzipped to'
+        directory specified in step 1:
+      </p>
+      <p>
+        BugsXLA Book Case Studies.xls, BugsXLA Egs1.xls, BugsXLA Egs2.xls and BugsXLA Egs3.xls
+      </p>
+      <p>
+        Help is available on some of the BugsXLA forms. Click on the 'Help?!' checkbox and
+        hover the mouse over any areas that are highlighted.
+      </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

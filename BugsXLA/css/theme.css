@@ -1,0 +1,26 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  display: block;
+  position: static;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.indent {
+    padding-left: 40px;
+}
+
+.no-indent-list {
+    padding-left: 20px;
+}
+
+.alignRight {
+    text-align: right;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Phil Woodward">
+    <link rel="shortcut icon" href="ico/favicon.ico">
+
+    <title>BugsXLA: Bayesian Analysis</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand">BugsXLA</span>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="instr.html">Installation Instructions</a></li>
+            <li><a href="walkthrough.html">Walkthrough</a></li>
+            <li><a href="ref.html">References</a></li>
+            <li class="active"><a href="issues.html">Troubleshooting</a></li>
+            <li><a href="http://www.openbugs.net/w/FrontPage">Open/WinBUGS</a></li>
+	    <li><a href="http://mcmc-jags.sourceforge.net">JAGS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="page-header">
+        <h1>Troubleshooting</h1>
+      </div>
+      <p>
+        Please review the discussion on the <a href="https://groups.google.com/forum/#!forum/bugsxla">BugsXLA Google Group</a>
+        and raise a new post if you cannot find an answer to your issue. The most common issues are discussed below here.
+      </p>
+      <p>
+        In more recent versions of Windows (version 7 onwards) it is common
+        to be prevented from downloading any files into the 'Program Files' folder,
+        and even if you overcome this by running 'as administrator', problems will occur later.
+        It is strongly recommended that the BugsXLA files be extracted to a folder immediately beneath the 
+		root C: directory, e.g. C:\BugsXLA7.  You may also encounter annoying error messages
+		on running WinBUGS if this package is located beneath the 'Program Files' folder.  
+		My solution is to save WinBUGS to C:\WinBUGS14.  OpenBUGS does not appear to have this problem.
+      </p>
+      <p>
+        BugsXLA will only function if the English language version of Excel is set;
+        this may be a Microsoft Office or even Windows level setting (see figure
+        below for an example of a Norwegian user’s solution).  If problems persist
+        after making this change, click on the ‘Clear Old Analysis’ button found on
+        the ‘BugsXLA Options’ form.  As a last resort, undertake a clean reinstall
+        as discussed on Installation Instructions page.
+      </p>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="img/figure-e1a.png" class="img-responsive" alt="figure 1" />
+        </div>
+        <div class="col-md-4">
+          <img src="img/figure-e1b.png" class="img-responsive" alt="figure 2" />
+        </div>
+        <div class="col-md-4">
+          <img src="img/figure-e1c.png" class="img-responsive" alt="figure 3" />
+        </div>
+      </div>
+      <p>
+        <strong>
+          Changes needed to language settings in order for BugsXLA to work.
+          Note that the local language can still be used as the ‘Text Services and Input Languages’ setting.
+        </strong>
+      </p>
+      <p>
+        The pathnames in Open/WinBUGS’ scripts have a maximum length of about 120.
+        Although BugsXLA attempts to maintain a check on the length, on occasions
+        path names that are too long are created.  Unfortunately, Open/WinBUGS does not
+        usually give an error message that clearly indicates the problem.
+        Sometimes it just fails to do anything.  If you suspect this is an issue,
+        the only solution is to move your work to a folder closer to the root directory.
+      </p>
+      <p>
+        A similar problem to that caused by excessively long pathnames has also been
+        observed when the pathname contains a character that Open/WinBUGS does not like.
+        The only example that has been brought to my attention was when the use of a
+        hyphen ‘-‘ caused a problem.  If Open/WinBUGS fails to run and your pathname contains
+        non-alphanumeric characters, other than spaces, it is advisable to try again
+        after renaming the folders and files.  If you do discover characters that cause
+        a problem, please let others know by posting on the BugsXLA Google Group (see below).
+      </p>
+      <p>
+        If you do discover any other issues and identify the solution,
+        please add to the discussion on the BugsXLA Google Group by raising a new post
+        so that others can learn from your experience.
+      </p>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

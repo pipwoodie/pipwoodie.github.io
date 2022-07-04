@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>BugsXLA: Seeds</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+body {
+	background-image: url(p12c15.gif);
+}
+.style2 {font-size: 12pt}
+-->
+</style>
+</head>
+
+<body>
+<div align="center">
+  <p align="center"><b style='mso-bidi-font-weight:normal'><span
+style='font-size:18.0pt;color:navy'>BugsXLA (Ver 5.0) : Walk through example.</span></b></p>
+  <hr>
+  <div align="left">
+    <p><b><span style='font-size:14.0pt;
+  mso-bidi-font-size:12.0pt'>Seeds: Random effect logistic regression</span></b>.<br>
+      <span class="style2"><b>Bugs Examples Volume 1.</b> Originally from Crowder (1978) Appl. Stat., 27, 34-37.<br>
+      This study estimates the proportion of seeds that germinate on each of 21 plates arranged in a 2 x 2 factorial layout by seed and root type.<br>
+The data can be found in the Excel file 'BugsXLA Egs 2.XLS' bundled with the latest download.</span>
+    <p>The Bayesian model specification form is obtained by clicking on the &#8216;Bayesian 
+	Model&#8217; icon on the BugsXLA toolbar (highlighted below).
+    <p align="center"><img src="v5.0_WT1.png">
+    <p>This brings up the form shown on the right below.
+    <p align="center"><img src="v5.0_WT2.png">    
+    <p>The data is stored in an Excel sheet in a rectangular&nbsp;block of cells, the first row of which contains the names of the variables.<span style="mso-spacerun:
+  yes">&nbsp; </span>Valid names begin with a letter and may contain letters, numbers, dot ('.') and the underscore; BugsXLA 
+	is case sensitive. Note the text in blue that defines predictions and 
+	contrasts to be estimated; this is discussed further below.</p>
+    <p>The model is specified using statements similar in style to those used in major statistical packages such as SAS, Genstat, S-PLUS or R. 
+	Models can include 'variable selection' terms (VS factors and variates) as discussed, for example, in Chipman, Hamada &amp; Wu (1997), Technometrics, Vol 39, pp372-381. Any categorical factors (or 'censors' when censored data are being modelled) must be defined, which can be done by clicking on the 
+	'Set Variable Types' button.</p>
+    <p align="center"><img src="v4.0_WT3.png">
+    <p>Note that this utility for defining the factors does not edit the actual values of the variables.<span style="mso-spacerun: yes">&nbsp; </span>It is used to identify the variable as a factor so that BugsXLA treats it appropriately.<span
+  style="mso-spacerun: yes">&nbsp; </span>It is also used to determine the order of the levels&#8217; labels, which do not have to be numeric.<span
+  style="mso-spacerun: yes">&nbsp; </span>This process only has to be done once, as the information is stored in a comment in the cell containing the variable&#8217;s name on the Excel sheet.    
+    <p align="center"><img src="v4.0_WT4.png"> 
+    <p align="left"> Clicking on the 'MCMC &amp; Output Options' button on the original model specification form allows the user to alter settings for the WinBUGS MCMC run and analysis output. 
+	BugsXLA can also create R scripts so that further work can be undertaken using the R environment with all the additional functionality that this package provides. After choosing these settings and confirming the model is OK, if the 
+	'Predictions or Contrasts' box is checked the following form will appear.
+    <p align="center"><img src="v4.0_WT5.png">
+    <p align="left">It is here where the blue text defining the predictions or contrasts to be estimated is read into the program. Like all the other forms in BugsXLA, there is a 
+	'Help!?' check box in the lower left corner that will highlight those parts of the form about which help information can be obtained.    
+    <p align="center"><img src="v4.0_WT6.png">
+    <p align="left">In this case, by moving the mouse over the highlighted 'Predictions Range' text, the help shown above is displayed. After defining the types of predictions required, it is necessary to specify the prior distributions for the model parameters.    
+    <p align="center"><img src="v5.0_WT7.png">
+    <p align="left"> The defaults should represent only weak prior knowledge in most situations, but it is strongly advised that sensitivity to priors be assessed as part of any Bayesian analysis. It is also advisable to consider informative priors for nuisance parameters, particularly when they are hyper-parameters for random effects. If a Half-Normal distribution is used, the random 
+	effects prior can be elicited graphically by clicking on the Graphical 
+	Feedback Interface button labelled 'GFI'.
+    <p align="center"><img src="v5.0_WT8.png">
+    <p align="left"> By default the user is asked to think about the maximum credible difference between the effects of two randomly chosen levels of the factor. When a log or logit link is used, this is equivalent to thinking about the ratio or ratio of odds between factor level settings. The implied prior distribution, with some of its percentiles, is dynamically updated as the user changes this 'credible difference'.<p align="center"> 
+	<img border="0" src="v4.0_WT9.png" width="267" height="206"><p align="left"> 
+	Output to aid model checking can be requested on the form that appears if 
+	the 'Model Checks' button is clicked on the 'Prior Distributions' form.<p align="center"><img src="v5.0_WT10.png">
+    <p align="left"> After the priors have been specified, WinBUGS is run via a script, and the results imported. The summary statistics, and any samples requested, are imported to new Excel sheets.    
+    <p align="center"><img src="v5.0_WT11.png">
+    <p align="left"> The column with the header 'WinBUGS Name' shows the generic node names used in WinBUGS. These will only be useful to an experienced 
+	WinBUGS user who wished to edit the code directly later. Informative names for the parameters are given in the column with the header 
+	'Label'. Inspection of the summary statistics shows that the first level of the independent 
+	(fixed) effects of factors Seed and Root have been constrained to zero, as have three of the levels of the interaction term. The output also provides a summary of the model fitted, plus the prior distributions specified. It also records the settings for the MCMC run with the time taken to run. Due to the inherent uncertainties currently associated with using MCMC sampling methods to tackle generic problems, a final warning message is displayed to ensure the user remains cautious when interpreting the results.    
+    <p align="center"><img src="v5.0_WT12.png">
+    <p align="left">The predictions and contrasts are also imported onto the same sheet as the summary statistics.<p align="center">
+	<img border="0" src="v4.0_WT13.png" width="569" height="822"><p align="left">
+	If model checking output was requested, then a sheet labelled 'Mdl Chks(1)' 
+	will be created with both numeric and graphical results to help assess the 
+	goodness of fit of the model.<p align="center"><img src="v5.0_WT14.png">
+    <p align="left"> If samples are imported from WinBUGS, then the &#8216;Post 
+	Plots' utility, available via the BugsXLA toolbar, can be used to display both the posterior and prior distribution on the same graph. Clicking on this icon whilst one of the cells in the Excel column of imported samples is selected will bring up the form shown below on the right.    
+    <p align="center"><img src="v5.0_WT15.png">
+    <p align="left"> Providing the prior can be inferred from the model, this will be displayed on the form.    
+    <p align="center"><img src="v5.0_WT16.png">
+    <p align="left"> A histogram of the posterior samples, with the prior overlaid, is produced.    
+    <p align="center"><img src="v5.0_WT17.png">
+    <p align="left">If you look in the sub-folder specified for the R script on 
+	the 'MCMC &amp; Output Options' form, you will find the plain text file 'BGX R Script.R'. This script file utilises the BRugs package to allow the user to rerun the analysis  and undertake further work within the R environment. If you wish to view the WinBUGS code or script files, these are also stored in this sub-folder along with the data and initial value files. 
+	Another R script file named 'BGX R EDA.R', shown above, is also created that facilitates an 
+	exploratory data analysis based on the model specified; the intention of 
+	this script is to provide some R code that can be used as a starting point 
+	for exploring the data, not a definitive EDA.<p align="center"><img src="v5.0_WT18.png">
+    <p align="left"> Various  aspects of the BugsXLA program can be altered 
+
+ on the &#8216;BugsXLA Options' form obtained via the BugsXLA toolbar.
+    <p align="center"><img src="v5.0_WT19.png">
+</div>
+</body>
+</html>

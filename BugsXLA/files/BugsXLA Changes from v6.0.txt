@@ -1,0 +1,49 @@
+Version 7.02
+
+MAJOR NEW FEATURES
+
+1)  Option to use JAGS
+2)  Negative Binomial error distribution added
+
+
+MINOR NEW FEATURES
+
+1)  Able to change credible limits shown in summary tables via new PostPlot feature.
+2)  When loading previous model the prior and MCMC settings are loaded, not just the model terms.
+3)  Also, model checks and predictions cleared when loading previous model.
+4)  Able to make predictions when only constant in the model.
+5)  Location of saved files displayed on output sheet.
+6)  Better naming convention for any additional sheets created, and these displayed on output sheet.
+7)  Multiple chains summarised instead of only first (still recommend use 1 chain once convergence assured)
+8)  Better formatting of prediction numeric labels.
+9)  Various improvements to R scripts, notably improved EDA.
+10) Able to import predictions and contrasts on link scale (useful for predictive-prior distributions)
+11) Zero Inflated parameter added to Binomial, Poisson and Negative Binomial models.
+12) Able to plot histograms of many model checking functions using Post Plot utility.
+13) File path length only restricted when using WinBUGS (not fully tested for OpenBUGS or JAGS yet)
+15) Able to include offset term in Binomial models.
+16) New icons for launching some of the applications (prompted by Office upgrade that made old icons disappear)
+17) MC error included in annotated comment for posterior mean
+18) Posterior plots of predictions not dynamically linked to credible intervals (v7.02)
+19) Posterior samples saved to sheet via array rather than cell by cell: x50 faster (v7.02)
+20) Z.eff (random factor effects) inits linked to magnitude of hyper.Z inits (v7.02)
+21) MC convergence Z diagnostic added (v7.02)
+22) Wishart prior for UN model can be altered with constraints (v7.02)
+23) Various improvements to the help text.
+
+
+BUG FIXES
+
+1)  Forced importing of percentiles and median to prevent errors when these are absent.
+2)  Warning message, instead of aborted importing, when samples requested for parameters not in the model.
+3)  Program failure when 64bit MS software being used eg 'Compile error in hidden module: BrowseForFolder'
+    (solution provided by Xie Shaoming)
+4)  Program failure when Excel sheet containing data had invalid path.
+5)  Incorrect contrast calculation for ordinal/ordered categorical data.
+6)  Incorrect coding of carryover covariate in Inhaler ordinal dataset.
+7)  Allow 'NA' when exporting data array.
+8)  Fix potential for invalid initial values for AR1 phi parameter.
+9)  Error in OpenBUGS script template
+10) Error when importing results generated from user-defined OpenBUGS script
+11) Error when fixed factor model has expanded terms in different order to how variables are parsed, e.g. A*B + C (v7.01)
+12) Error when data added to plot of Predicted Odds (v7.02)

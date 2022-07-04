@@ -1,0 +1,43 @@
+Version 7.02
+
+Output differences to that shown in the book (Ed.1)
+
+Section 2
+There are numerous changes that reflect the changes summarised in 'BugsXLA Changes from v5.0.txt' and 'BugsXLA Changes from v6.0.txt'
+
+Although all values will be slightly different due to improved default priors, initial values, MCMC settings and OpenBUGS being the default computing engine, except where stated below the output should be recognisably similar to that described in the book.
+
+The layout and labelling for all predictions and contrasts will be different to faciliate the new Post Plots feature.  Again, the actual values should be recognisably similar to that described in the book.
+
+The fixed effects zero constrained levels are no longer summarised.  There is no longer the option to do this due to them now being set to zero as deterministic nodes.
+
+Case Study 4.2
+Predictions for dose can use the v(1.6, 1.9, 16) notation.
+pD is no longer negative for GenLogit link due to better default priors.
+Probit model does not crash due to better default priors.
+
+Case Study 4.3
+Model does not crash due to better default priors.
+
+Case Study 4.5
+The Gamma distribution bimodal deviance problem has been fixed in OpenBUGS.
+
+Case Study 5.1
+The trailing zeroes issue does not occur with OpenBUGS due to it reporting summaries with more significant figures.
+
+Case Study 6.4
+The mixing for sigma.Z[1] node is better than that shown in Figure 6.17 when OpenBUGS is the computing engine.
+The model does not crash when multiple chains are run due to better default priors and better initial values.
+
+Case Study 7.1
+Figure 7.7 can more easily be obtained using the Post Plot tool after specifying predictions using v(1, 1000, L) notation for conc.
+
+Section 11.3
+When a new level (~) is specified on a contrast line ( c(T,C) ) BugsXLA now recognises when the 'new level' factor is in the model as an interaction with the 'contrast' factor.  Hence, the main effect is eliminated and only the extra variation due to the interaction is included in the inference.  However, the inferences will be reported back on the natural scale unless the new option 'Also on link scale' is selected on the 'Predictions & Contrasts' form.  Hence, BugsXLA can now be used to derive predictive-prior distributions for parameters on any link scale available.
+
+Appendix B
+Ci value 0.3 is now 0.33.  The square-root of Ci is used as the multiplier for all non-identity links and the log-Normal distribution.
+Initial values are also set for the Z.Eff terms due to problems running OpenBUGS when these were left to modelGenInits command.
+
+Appendix C
+The main difference to the code is how zero constrained levels are handled, these now being explicitly defined as deterministic nodes set to zero.
